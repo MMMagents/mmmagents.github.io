@@ -51,6 +51,14 @@ li b{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);c
 .elena q{font-style:italic}.elena small{display:block;color:var(--gold);font-weight:700;margin-top:2px}
 .crew{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:26px;color:#aaa;font-size:13px;flex-wrap:wrap}
 .crew img{width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);margin-left:-8px;object-fit:cover}
+.shop{margin-top:24px;padding:14px;border-radius:14px;background:rgba(20,22,40,.75);border:1px solid rgba(232,181,74,.3)}
+.shop h2{font:26px Bangers,Impact,sans-serif;font-weight:400;letter-spacing:1px;color:#fff;text-shadow:2px 2px 0 var(--red);margin-bottom:4px}
+.shop h3{font:600 12.5px system-ui;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:12px 0 6px}
+.links{display:grid;gap:8px}
+.links a{display:block;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(232,181,74,.35);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.links a:hover,.links a:focus{border-color:var(--gold);color:var(--gold)}
+.links a span{display:block;font-weight:400;font-size:12.5px;color:#aaa}
+@media(min-width:600px){.links{grid-template-columns:1fr 1fr}}
 footer{text-align:center;margin-top:22px;padding-top:16px;border-top:1px solid rgba(232,181,74,.2);font-size:14px;color:#aaa}
 footer a{color:var(--gold);text-decoration:none;font-weight:600}
 footer .sig{font:20px Bangers,Impact,sans-serif;letter-spacing:1px;color:#fff;margin-bottom:8px}
@@ -132,10 +140,28 @@ See it run for real: follow @mmmagents on TikTok, YouTube, Instagram and X and w
   </ul>
   <div class="elena"><img src="assets/elena.webp" alt="Elena"><div><q>I don't do pep talks. I do lists. You'll find them... acceptable.</q><small>Elena, MMM</small></div></div>
   <div class="crew"><img src="assets/nova.webp" alt="Nova" style="margin-left:0"><img src="assets/elena.webp" alt="Elena"><img src="assets/greta.webp" alt="Greta"><img src="assets/stella.webp" alt="Stella"><div>Nova, Elena, Greta &amp; Stella run My Money Machine.</div></div>
+  <section class="shop" id="shop" aria-label="Shop and free tools">
+   <h2>Shop + Free Tools</h2>
+   <h3>Shop</h3>
+   <div class="links">
+   <a href="https://mmmagents.gumroad.com/l/cshhab" target="_blank" rel="noopener noreferrer">Build Your Own AI Team Floor<span>The full kit</span></a>
+   <a href="https://mmmagents.gumroad.com/l/money-ledger" target="_blank" rel="noopener noreferrer">Money Ledger Template<span>Track every dollar</span></a>
+   <a href="https://mmmagents.gumroad.com/l/business-builder" target="_blank" rel="noopener noreferrer">Service Business Builder Kit<span>Launch a service business</span></a>
+   <a href="https://mmmagents.gumroad.com/l/quote-builder" target="_blank" rel="noopener noreferrer">Flat-Rate Quote Builder<span>Quote jobs fast</span></a>
+   </div>
+   <h3>Free Tools</h3>
+   <div class="links">
+   <a href="https://docs.google.com/document/d/e/2PACX-1vRW5C_6wmK0DTJsB16YlWvTcVBrtMuu-hNaHHUJq7maAfBXQRj-j9iCXvmN1f9QR3WWWgyRMIxx1YiK/pub" target="_blank" rel="noopener noreferrer">Starter Tools<span>Amazon picks</span></a>
+   <a href="https://docs.google.com/document/d/1jHEBAabbdhQJiij4Ysw5CsTKQaWHGYj621PND-pzomU/view" target="_blank" rel="noopener noreferrer">Steal Her Look<span>Amazon list</span></a>
+   <a href="https://docs.google.com/document/d/1asQOnQVnD8tQyOsI9I0u2xwJ8twKsTmTq3q6qMIg1MY/view" target="_blank" rel="noopener noreferrer">Steal His Look<span>Amazon list</span></a>
+   <a href="https://docs.google.com/document/d/1hW3pQI4V4sr7iXsNt3XypSm5decIfSsbu5wagnVZFRA/view" target="_blank" rel="noopener noreferrer">Steal the Props<span>Amazon list</span></a>
+   </div>
+   <p class="fine">As an Amazon Associate we earn from qualifying purchases.</p>
+  </section>
  </div>
 </div>
 <footer><div class="sig">Every machine has a heart, ours has many.</div>
-<a href="https://www.youtube.com/@mmmagents" target="_blank" rel="noopener noreferrer">YouTube</a> · <a href="https://www.instagram.com/mmmagents" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://x.com/mmmagents" target="_blank" rel="noopener noreferrer">X</a> @mmmagents<br>TikTok <a href="https://www.tiktok.com/@mmmagents" target="_blank" rel="noopener noreferrer">@mmmagents</a><br>Kit: <a href="https://mmmagents.gumroad.com/l/cshhab" target="_blank" rel="noopener noreferrer">AI Team Floor Kit</a> · Facebook: <a href="https://www.facebook.com/people/MMM-Agents/61595447973310/" target="_blank" rel="noopener noreferrer">MMM Agents</a>
+<a href="https://www.youtube.com/@mmmagents" target="_blank" rel="noopener noreferrer">YouTube</a> · <a href="https://www.instagram.com/mmmagents" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://x.com/mmmagents" target="_blank" rel="noopener noreferrer">X</a> · <a href="https://www.facebook.com/people/MMM-Agents/61595447973310/" target="_blank" rel="noopener noreferrer">Facebook</a> @mmmagents<br>TikTok <a href="https://www.tiktok.com/@mmmagents" target="_blank" rel="noopener noreferrer">@mmmagents</a><br>Kit: <a href="https://mmmagents.gumroad.com/l/cshhab" target="_blank" rel="noopener noreferrer">AI Team Floor Kit</a>
 <p class="fine">© 2026 MMM Agents · My Money Machine</p></footer>
 </div>
 <script>
