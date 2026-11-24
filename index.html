@@ -42,7 +42,7 @@ input:focus{outline:none;border-color:var(--gold)}
 .fine{font-size:12px;color:#9a96a6;margin-top:6px}
 .err{color:#ff8a80;font-size:13px;min-height:0}
 .done{display:none;text-align:center;font-size:14px;color:#cfe}
-body:not(.locked) .gate form{display:none}body:not(.locked) .gate .done{display:block}body:not(.locked) .gate .fine{display:none}
+.sent .gate form{display:none}.sent .gate .done{display:block}.sent .gate .fine{display:none}
 ul{list-style:none;padding:0;margin:18px 0 6px}
 li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(232,181,74,.15)}
 li b{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font:16px Bangers,Impact,sans-serif}
@@ -74,53 +74,25 @@ footer .sig{font:20px Bangers,Impact,sans-serif;letter-spacing:1px;color:#fff;ma
  </div>
  <section class="scene" aria-label="Nova at the prompt board">
   <div class="board">
-   <pre id="prompt" tabindex="0">FREE PERSONAL AGENT TEMPLATE
+   <pre id="prompt" aria-hidden="true">FREE PERSONAL AGENT TEMPLATE
 The Chief of Staff Prompt for Grok Bot, from MMM Agents
 
-HOW TO USE
-1. Create a new bot in Grok Bot. Name it anything (ours is Elena).
-2. Paste everything between the lines into the bot&#x27;s instructions and save.
-3. Start a chat, say &quot;hi,&quot; and answer its 5 questions.
-
---- COPY FROM HERE ---
-You are my chief of staff. Calm, direct, efficient, a little dry, quietly on my side. No fluff, no hype.
-
-FIRST RUN
-If you don&#x27;t know these yet, ask one at a time, then summarize and remember them:
-1. What should I call you?
-2. Your work or business, in one line?
-3. Your top 3 goals right now?
-4. Tools you use daily (email, calendar, docs, others)?
-5. Best time for your daily brief?
-Then offer to set up the daily brief as a scheduled routine. Only do it if I say yes.
-
-DAILY BRIEF
-Each morning, or when I say &quot;brief&quot;:
-- Priorities: 3 to 5 items tied to my goals.
-- Needs you: anything waiting on my decision or reply.
-- The ONE thing: today&#x27;s most important task, and why.
-- Nudge: one line to get me moving.
-Under 150 words. Use my connected tools if you can see them; otherwise ask what&#x27;s on today. Don&#x27;t guess.
-
-WEEKLY REVIEW
-Once a week, or when I ask: wins, misses, progress on my 3 goals, and my Ideas list.
-
-RULES
-- Never send, post, buy, or delete anything without my clear OK.
-- Costs: before anything paid or heavy (paid tools, big API or AI runs), estimate the cost and ask. Prefer free or cheap options.
-- Efficiency: short answers, no busywork. Batch similar tasks.
-- Log: keep a running dated log of decisions and changes.
-- Ideas: when a good idea comes up, save it to my Ideas list.
-- Unclear? Ask one question, not five.
-- If I drift from my goals, say so.
---- COPY TO HERE ---
-
-&quot;I don&#x27;t do pep talks. I do lists. You&#x27;ll find them... acceptable.&quot; (Elena, Chief of Staff, MMM Agents)
-
-See it run for real: follow @mmmagents on TikTok, YouTube, Instagram and X and watch the girls run theirs.
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
+██████████████ █████████ ███████████
 </pre>
-   <button class="copy" id="copy" type="button">Copy prompt</button>
-   <div class="off">Enter your email to power on<small>The prompt unlocks right here.</small></div>
+   <div class="off">Enter your email to get it<small>The template comes to your inbox.</small></div>
   </div>
  </section>
   <div class="gate" id="gatebox">
@@ -129,8 +101,8 @@ See it run for real: follow @mmmagents on TikTok, YouTube, Instagram and X and w
     <div class="err" id="err" role="alert"></div>
     <button class="cta" type="submit">Email me the template</button>
    </form>
-   <p class="fine">Free. We only use your email to send the template. Unsubscribe anytime.</p>
-   <p class="done">Board's on. Copy the prompt above, then paste it into Grok Bot.</p>
+   <p class="fine">Free. Your email joins the MMM Agents list (sent by Kit). Unsubscribe anytime. <a href="privacy.html" style="color:inherit">Privacy</a></p>
+   <p class="done">Check your inbox. Confirm your email and the template arrives from MMM Agents.</p>
   </div>
  <div>
   <ul>
@@ -174,21 +146,13 @@ See it run for real: follow @mmmagents on TikTok, YouTube, Instagram and X and w
 <p class="fine">© 2026 MMM Agents · My Money Machine</p></footer>
 </div>
 <script>
-const K='mmm_template_unlocked',b=document.body;
-if(localStorage.getItem(K))b.classList.remove('locked');
+const b=document.body;
 document.getElementById('gate').addEventListener('submit',async e=>{
  e.preventDefault();const em=document.getElementById('email'),er=document.getElementById('err');
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){er.textContent='Enter a valid email.';em.focus();return}
  er.textContent='';
- const url=e.target.getAttribute('action');
- if(!url.startsWith('#')){try{await fetch(url,{method:'POST',body:new FormData(e.target),mode:'no-cors'})}catch(_){}} // preview: placeholder is a no-op
- localStorage.setItem(K,'1');b.classList.add('powering');b.classList.remove('locked');
- setTimeout(()=>b.classList.remove('powering'),1200);
-});
-document.getElementById('copy').addEventListener('click',async ev=>{
- const t=document.getElementById('prompt').innerText,btn=ev.currentTarget;
- try{await navigator.clipboard.writeText(t)}catch(_){const r=document.createRange();r.selectNodeContents(document.getElementById('prompt'));const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy')}
- btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy prompt',1800);
+ try{await fetch(e.target.getAttribute('action'),{method:'POST',body:new FormData(e.target),mode:'no-cors'})}catch(_){er.textContent='Could not reach the sign-up. Try again in a minute.';return}
+ b.classList.add('sent');
 });
 </script>
 </body></html>
